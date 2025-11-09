@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grovia Tale</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="container nav">
+      <h1 class="logo">Grovia Tale</h1>
+      <nav>
+        <ul id="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#production">Production</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="menu-btn">☰</button>
+    </div>
+  </header>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo-section">
+        <img src="images/logo.png" alt="Grovia Tale Logo" class="logo-img" />
+        
+        <!-- <h1 class="logo-text">Grovia Tale</h1> -->
+      </div>
+      <nav>
+        <ul id="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#production">Production</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="menu-btn">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="videos/hero.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <h2>Grow your presence.<br><span>Tell your story beautifully.</span></h2>
+      <p>We create digital campaigns that help brands connect, grow, and inspire.</p>
+      <a href="#services" class="btn">Our Services</a>
+      <a href="#contact" class="btn-outline">Contact Us</a>
+    </div>
+  </section>
+
+
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>At Grovia Tale, we blend strategy, creativity, and storytelling to help brands grow authentically. From campaigns to content, we focus on clarity and real impact.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section dark">
+    <div class="container">
+      <h2>Our Services</h2>
+
+      <div class="carousel">
+        <button class="nav prev">❮</button>
+        <div class="carousel-track">
+          <div class="card">
+            <img src="images/branding.jpeg" alt="Branding">
+            <div class="card-content">
+              <h3>Branding</h3>
+              <p>Build a unique brand identity with clear voice and visuals.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/vid_pho.jpg" alt="Photography and Videography">
+            <div class="card-content">
+              <h3>Photography and Videography</h3>
+              <p>To enchance the product and make attractive to the viewer.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/web_app.jpg" alt="Web and App Development">
+            <div class="card-content">
+              <h3>Web and App Development</h3>
+              <p>Grow your digital presence with creative social strategies.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/ad.jpg" alt="Digital Ads">
+            <div class="card-content">
+              <h3>Digital Ads</h3>
+              <p>Performance-driven ad campaigns to boost your reach.</p>
+            </div>
+          </div>
+        </div>
+        <button class="nav next">❯</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Production -->
+  <section id="production" class="section">
+    <div class="container">
+      <h2>Production</h2>
+      <div class="grid">
+        <div class="box">
+          <h3>Pre-Production</h3>
+              <p>Pre-production is the backbone of any creative project. It's where ideas take shape, budgets get set, schedules are made, and all the important details are planned out before production begins</p>
+        </div>
+
+        <div class="box">
+          <h3>Production</h3>
+              <p>Production is where all the planning comes to life. Cameras roll, models step into their roles, and every shot captures the essence of the creative vision. It's the stage where ideas turn into reality, bringing the project one step closer to completion.</p>
+        </div>
+
+        <div class="box">
+          <h3>Post-Production</h3>
+              <p>Post-production is where raw footage is transformed into a polished final product. Editing, sound design, visual effects, and final adjustments all come together to bring the creative vision to life.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section dark">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Grovia Tale. Crafted with care.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
