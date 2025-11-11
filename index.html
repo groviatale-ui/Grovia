@@ -78,7 +78,10 @@
       <h2>Our Services</h2>
 
       <div class="carousel">
-        <button class="nav prev">❮</button>
+        <!-- Left Arrow -->
+        <button class="nav-btn prev">&#10094;</button>
+
+        <!-- Track -->
         <div class="carousel-track">
           <div class="card">
             <img src="images/branding.jpeg" alt="Branding">
@@ -87,18 +90,27 @@
               <p>Build a unique brand identity with clear voice and visuals.</p>
             </div>
           </div>
+
           <div class="card">
             <img src="images/vid_pho.jpg" alt="Photography and Videography">
             <div class="card-content">
               <h3>Photography and Videography</h3>
-              <p>To enchance the product and make attractive to the viewer.</p>
+              <p>Enhance the product and make it more attractive to viewers.</p>
             </div>
           </div>
+
           <div class="card">
             <img src="images/web_app.jpg" alt="Web and App Development">
             <div class="card-content">
               <h3>Web and App Development</h3>
               <p>Grow your digital presence with creative social strategies.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/seo.jpg" alt="SEO">
+            <div class="card-content">
+              <h3>SEO & Meta Ads</h3>
+              <p>Bring your brand to life with stunning design, smart marketing, and strong online presence.</p>
             </div>
           </div>
           <div class="card">
@@ -109,11 +121,12 @@
             </div>
           </div>
         </div>
-        <button class="nav next">❯</button>
+
+        <!-- Right Arrow -->
+        <button class="nav-btn next">&#10095;</button>
       </div>
     </div>
   </section>
-
   <!-- Production -->
   <section id="production" class="section">
     <div class="container">
@@ -142,14 +155,23 @@
   <section id="contact" class="section dark">
     <div class="container">
       <h2>Contact Us</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+      <form 
+        action="https://formspree.io/f/mnnlakrj" 
+        method="POST" 
+        class="contact-form"
+      >
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <!-- <input type="text" name="subject" placeholder="Subject" required /> -->
+        <input type="hidden" name="_subject" value="New message from Grovia website">
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message ➜</button>
       </form>
     </div>
   </section>
+
+  <!-- Popup message -->
+  <div id="popup" class="popup-message"></div>
 
   <!-- Footer -->
   <footer>
@@ -157,5 +179,39 @@
   </footer>
 
   <script src="script.js"></script>
+  <!-- Popup Message -->
+  <div id="popup-message" class="popup-message"></div>
+
+  <!-- Contact Form Script -->
+  <script>
+    const form = document.querySelector('.contact-form');
+    const popup = document.getElementById('popup-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      popup.textContent = 'Sending...';
+      popup.className = 'popup-message show sending';
+
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        popup.textContent = '✅ Message sent successfully!';
+        popup.className = 'popup-message show success';
+        form.reset();
+      } else {
+        popup.textContent = '❌ Something went wrong. Please try again.';
+        popup.className = 'popup-message show error';
+      }
+
+      setTimeout(() => {
+        popup.className = 'popup-message';
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
